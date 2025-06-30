@@ -1,2 +1,2 @@
 # SQL-Project-Mig-and-Pop
-Projeto de Migração e População.
+Scripts de migração e população de dados fictícios.
