@@ -1,3 +1,5 @@
+-- Criação das tabelas principais
+
 CREATE TABLE usuarios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
@@ -17,4 +19,13 @@ CREATE TABLE pedidos (
     usuario_id INTEGER NOT NULL,
     data DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE itens_pedido (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    pedido_id INTEGER,
+    produto_id INTEGER,
+    quantidade INTEGER DEFAULT 1,
+    FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)
 );
